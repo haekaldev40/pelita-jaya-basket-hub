@@ -1,36 +1,34 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import heroImage from "@/assets/hero-basketball.jpg";
+import heroImage from "@/assets/pelita-jaya-hero.jpeg";
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Glassmorphism Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/70 to-orange/30 z-10 backdrop-blur-[2px]"></div>
         <img
           src={heroImage}
-          alt="Basketball Game"
+          alt="Pelita Jaya Basketball Players"
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Geometric Decorations */}
-      <div className="absolute top-20 right-10 w-32 h-32 border-4 border-orange/30 rotate-45 animate-float"></div>
-      <div className="absolute bottom-20 left-20 w-24 h-24 border-4 border-orange/20 rotate-12 animate-float" style={{ animationDelay: "1s" }}></div>
+      {/* Glassmorphism Decorative Elements */}
+      <div className="absolute top-20 right-10 w-40 h-40 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl rotate-45 animate-float"></div>
+      <div className="absolute bottom-32 left-20 w-32 h-32 bg-orange/10 backdrop-blur-md border border-orange/20 rounded-3xl rotate-12 animate-float" style={{ animationDelay: "1s" }}></div>
+      <div className="absolute top-1/3 right-20 w-24 h-24 bg-white/5 backdrop-blur-md border border-white/10 rounded-full animate-float" style={{ animationDelay: "0.5s" }}></div>
       
-      {/* Dot Pattern */}
-      <div className="absolute top-40 right-1/4 grid grid-cols-3 gap-2 opacity-40">
-        {Array.from({ length: 9 }).map((_, i) => (
-          <div key={i} className="w-2 h-2 rounded-full bg-orange"></div>
-        ))}
-      </div>
+      {/* Gradient Orbs */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-orange/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-tl from-navy/30 to-transparent rounded-full blur-3xl"></div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-3xl">
-          <div className="inline-block mb-6 px-4 py-2 bg-orange/20 backdrop-blur-sm rounded-full border border-orange/30 animate-fade-in">
-            <span className="text-orange font-semibold text-sm">🏀 Season 2024/2025</span>
+          <div className="inline-block mb-6 px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg animate-fade-in">
+            <span className="text-white font-semibold text-sm tracking-wide">🏀 Season 2024/2025</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight animate-slide-up">
@@ -49,41 +47,40 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <Button 
               size="lg" 
-              className="bg-orange hover:bg-orange-dark text-white text-base px-8 py-6 hover-glow group"
+              className="bg-gradient-to-r from-orange to-orange-light hover:from-orange-dark hover:to-orange text-white text-base px-8 py-6 hover-glow group shadow-xl"
             >
               Beli Tiket Sekarang
               <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-navy text-base px-8 py-6"
+              className="bg-white/10 backdrop-blur-xl border-2 border-white/30 text-white hover:bg-white hover:text-navy text-base px-8 py-6 shadow-xl transition-all"
             >
               Lihat Jadwal
             </Button>
           </div>
 
-          {/* Stats */}
+          {/* Stats with Glassmorphism */}
           <div className="grid grid-cols-3 gap-6 mt-16 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            <div className="text-center">
+            <div className="text-center p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
               <div className="text-3xl md:text-4xl font-black text-orange mb-2">15+</div>
-              <div className="text-sm text-white/80 font-medium">Tahun Berdiri</div>
+              <div className="text-sm text-white/90 font-medium">Tahun Berdiri</div>
             </div>
-            <div className="text-center border-x border-white/20">
+            <div className="text-center p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
               <div className="text-3xl md:text-4xl font-black text-orange mb-2">50+</div>
-              <div className="text-sm text-white/80 font-medium">Pemain Profesional</div>
+              <div className="text-sm text-white/90 font-medium">Pemain Profesional</div>
             </div>
-            <div className="text-center">
+            <div className="text-center p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
               <div className="text-3xl md:text-4xl font-black text-orange mb-2">10+</div>
-              <div className="text-sm text-white/80 font-medium">Juara Nasional</div>
+              <div className="text-sm text-white/90 font-medium">Juara Nasional</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative Lines */}
-      <div className="absolute top-1/4 right-0 w-1/3 h-1 bg-gradient-to-l from-orange to-transparent opacity-30"></div>
-      <div className="absolute bottom-1/4 right-0 w-1/4 h-1 bg-gradient-to-l from-orange to-transparent opacity-20"></div>
+      {/* Decorative Gradient Lines */}
+      <div className="absolute top-1/4 right-0 w-1/3 h-1 bg-gradient-to-l from-orange via-orange/50 to-transparent opacity-40 shadow-glow"></div>
+      <div className="absolute bottom-1/4 right-0 w-1/4 h-1 bg-gradient-to-l from-white/60 to-transparent opacity-30"></div>
     </section>
   );
 };
