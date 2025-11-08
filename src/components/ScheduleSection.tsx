@@ -1,44 +1,56 @@
 import { Calendar, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import pelitaLogo from "@/assets/pelita-jaya-logo.png";
 
 const ScheduleSection = () => {
   const matches = [
     {
       id: 1,
       homeTeam: "Pelita Jaya",
-      awayTeam: "Satria Muda",
-      date: "15 November 2025",
+      homeTeamLogo: pelitaLogo,
+      awayTeam: "Satria Muda Pertamina",
+      awayTeamLogo: null,
+      date: "Sabtu, 15 November 2025",
       time: "19:00 WIB",
       venue: "GBK Arena, Jakarta",
-      status: "Upcoming",
+      tournament: "IBL All Indonesia 2025",
+      gameNumber: "Game 1",
     },
     {
       id: 2,
       homeTeam: "Pacific Caesar",
+      homeTeamLogo: null,
       awayTeam: "Pelita Jaya",
-      date: "20 November 2025",
+      awayTeamLogo: pelitaLogo,
+      date: "Rabu, 20 November 2025",
       time: "20:00 WIB",
       venue: "BritAma Arena, Jakarta",
-      status: "Upcoming",
+      tournament: "IBL All Indonesia 2025",
+      gameNumber: "Game 2",
     },
     {
       id: 3,
       homeTeam: "Pelita Jaya",
+      homeTeamLogo: pelitaLogo,
       awayTeam: "Prawira Bandung",
-      date: "25 November 2025",
+      awayTeamLogo: null,
+      date: "Senin, 25 November 2025",
       time: "18:30 WIB",
       venue: "GBK Arena, Jakarta",
-      status: "Upcoming",
+      tournament: "IBL All Indonesia 2025",
+      gameNumber: "Game 3",
     },
     {
       id: 4,
       homeTeam: "Amartha Hangtuah",
+      homeTeamLogo: null,
       awayTeam: "Pelita Jaya",
-      date: "30 November 2025",
+      awayTeamLogo: pelitaLogo,
+      date: "Sabtu, 30 November 2025",
       time: "19:30 WIB",
       venue: "DBL Arena, Surabaya",
-      status: "Upcoming",
+      tournament: "IBL All Indonesia 2025",
+      gameNumber: "Game 4",
     },
   ];
 
@@ -63,69 +75,99 @@ const ScheduleSection = () => {
         </div>
 
         {/* Schedule Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {matches.map((match, index) => (
             <Card
               key={match.id}
-              className="group bg-white/5 backdrop-blur-md border border-white/10 hover:border-orange/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange/20 animate-fade-in"
+              className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-orange/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/30 animate-fade-in overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-6">
-                {/* Teams */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="text-center flex-1">
-                    <div className={`text-lg font-bold mb-2 ${match.homeTeam === "Pelita Jaya" ? "text-orange" : "text-white"}`}>
-                      {match.homeTeam}
-                    </div>
-                    <div className="text-2xl font-black text-white/50">-</div>
-                  </div>
-                  
-                  <div className="px-4 py-2 bg-orange/20 rounded-lg">
-                    <span className="text-orange font-bold text-sm">VS</span>
-                  </div>
-                  
-                  <div className="text-center flex-1">
-                    <div className={`text-lg font-bold mb-2 ${match.awayTeam === "Pelita Jaya" ? "text-orange" : "text-white"}`}>
-                      {match.awayTeam}
-                    </div>
-                    <div className="text-2xl font-black text-white/50">-</div>
-                  </div>
+              <CardContent className="p-0">
+                {/* Tournament Badge */}
+                <div className="bg-gradient-to-r from-orange to-orange-dark py-3 px-6 text-center">
+                  <span className="text-white font-bold text-sm uppercase tracking-wide">
+                    {match.tournament}
+                  </span>
                 </div>
 
-                {/* Match Details */}
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3 text-white/80">
-                    <Calendar size={18} className="text-orange" />
-                    <span className="text-sm">{match.date}</span>
+                {/* Main Match Display */}
+                <div className="p-8">
+                  {/* Teams with Logos */}
+                  <div className="flex items-center justify-between mb-8">
+                    {/* Home Team */}
+                    <div className="flex flex-col items-center flex-1 space-y-3">
+                      <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 flex items-center justify-center p-4 group-hover:border-orange/50 transition-all duration-300">
+                        {match.homeTeamLogo ? (
+                          <img 
+                            src={match.homeTeamLogo} 
+                            alt={match.homeTeam}
+                            className="w-full h-full object-contain"
+                          />
+                        ) : (
+                          <div className="text-3xl font-black text-white/50">
+                            {match.homeTeam.substring(0, 2).toUpperCase()}
+                          </div>
+                        )}
+                      </div>
+                      <h3 className={`text-center font-bold text-lg leading-tight max-w-[140px] ${
+                        match.homeTeam === "Pelita Jaya" ? "text-orange" : "text-white"
+                      }`}>
+                        {match.homeTeam}
+                      </h3>
+                    </div>
+
+                    {/* VS & Score */}
+                    <div className="flex flex-col items-center px-6 space-y-3">
+                      <div className="text-5xl font-black text-white/30">VS</div>
+                      <div className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                        <span className="text-white/50 font-bold text-sm">
+                          {match.gameNumber}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Away Team */}
+                    <div className="flex flex-col items-center flex-1 space-y-3">
+                      <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 flex items-center justify-center p-4 group-hover:border-orange/50 transition-all duration-300">
+                        {match.awayTeamLogo ? (
+                          <img 
+                            src={match.awayTeamLogo} 
+                            alt={match.awayTeam}
+                            className="w-full h-full object-contain"
+                          />
+                        ) : (
+                          <div className="text-3xl font-black text-white/50">
+                            {match.awayTeam.substring(0, 2).toUpperCase()}
+                          </div>
+                        )}
+                      </div>
+                      <h3 className={`text-center font-bold text-lg leading-tight max-w-[140px] ${
+                        match.awayTeam === "Pelita Jaya" ? "text-orange" : "text-white"
+                      }`}>
+                        {match.awayTeam}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3 text-white/80">
-                    <Clock size={18} className="text-orange" />
-                    <span className="text-sm">{match.time}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-white/80">
-                    <MapPin size={18} className="text-orange" />
-                    <span className="text-sm">{match.venue}</span>
+
+                  {/* Match Details */}
+                  <div className="space-y-3 pt-6 border-t border-white/10">
+                    <div className="flex items-center justify-center gap-2 text-white">
+                      <Calendar size={18} className="text-orange" />
+                      <span className="text-sm font-medium">{match.date}</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 text-white">
+                      <Clock size={18} className="text-orange" />
+                      <span className="text-sm font-medium">{match.time}</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 text-white">
+                      <MapPin size={18} className="text-orange" />
+                      <span className="text-sm font-medium">{match.venue}</span>
+                    </div>
                   </div>
                 </div>
-
-                {/* CTA Button */}
-                <Button className="w-full bg-orange hover:bg-orange-dark text-white group-hover:shadow-lg group-hover:shadow-orange/30 transition-all">
-                  Beli Tiket
-                </Button>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* View Full Schedule */}
-        <div className="text-center mt-12">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-white text-white hover:bg-white hover:text-navy"
-          >
-            Lihat Jadwal Lengkap
-          </Button>
         </div>
       </div>
     </section>
