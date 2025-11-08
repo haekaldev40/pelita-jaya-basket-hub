@@ -1,17 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import heroImage from "@/assets/pelita-jaya-hero.jpeg";
+import heroImage from "@/assets/hero-team.jpeg";
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background Image with Glassmorphism Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/70 to-orange/30 z-10 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy/60 to-orange/25 z-10"></div>
         <img
           src={heroImage}
-          alt="Pelita Jaya Basketball Players"
-          className="w-full h-full object-cover"
+          alt="Pelita Jaya Basketball Team"
+          className="w-full h-full object-cover object-center scale-105"
+          style={{ imageRendering: '-webkit-optimize-contrast' }}
         />
       </div>
 
