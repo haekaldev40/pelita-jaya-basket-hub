@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import pemain1 from "@/assets/pemain-1.webp";
+import pemain2 from "@/assets/pemain-2.jpeg";
+import pemain3 from "@/assets/pemain-3.jpg";
 
 const RosterSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,42 +14,26 @@ const RosterSection = () => {
     {
       id: 1,
       name: "Brandon Jawato",
-      number: "7",
-      position: "Point Guard",
-      height: "183 cm",
-      image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&auto=format&fit=crop",
+      number: "21",
+      position: "Small Forward",
+      height: "198 cm",
+      image: pemain1,
     },
     {
       id: 2,
       name: "Reymart Alvarez",
-      number: "23",
-      position: "Shooting Guard",
-      height: "190 cm",
-      image: "https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=600&auto=format&fit=crop",
+      number: "22",
+      position: "Point Guard",
+      height: "185 cm",
+      image: pemain2,
     },
     {
       id: 3,
-      name: "Michael Wani",
-      number: "15",
-      position: "Small Forward",
-      height: "195 cm",
-      image: "https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=600&auto=format&fit=crop",
-    },
-    {
-      id: 4,
       name: "Kenneth Mokon",
-      number: "11",
+      number: "2",
       position: "Power Forward",
-      height: "198 cm",
-      image: "https://images.unsplash.com/photo-1559692048-79a3f837883d?w=600&auto=format&fit=crop",
-    },
-    {
-      id: 5,
-      name: "Reggie Morseman",
-      number: "33",
-      position: "Center",
-      height: "205 cm",
-      image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&auto=format&fit=crop",
+      height: "203 cm",
+      image: pemain3,
     },
   ];
 
