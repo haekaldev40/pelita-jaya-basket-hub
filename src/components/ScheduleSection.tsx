@@ -1,6 +1,8 @@
 import { Calendar, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import pelitaLogo from "@/assets/pelita-jaya-logo.png";
+import satriaMudaLogo from "@/assets/satria-muda-logo.jpg";
+import hangTuahLogo from "@/assets/hang-tuah-logo.png";
 
 const ScheduleSection = () => {
   const matches = [
@@ -9,7 +11,7 @@ const ScheduleSection = () => {
       homeTeam: "Pelita Jaya",
       homeTeamLogo: pelitaLogo,
       awayTeam: "Satria Muda Pertamina",
-      awayTeamLogo: null,
+      awayTeamLogo: satriaMudaLogo,
       date: "Sabtu, 15 November 2025",
       time: "19:00 WIB",
       venue: "GBK Arena, Jakarta",
@@ -43,7 +45,7 @@ const ScheduleSection = () => {
     {
       id: 4,
       homeTeam: "Amartha Hangtuah",
-      homeTeamLogo: null,
+      homeTeamLogo: hangTuahLogo,
       awayTeam: "Pelita Jaya",
       awayTeamLogo: pelitaLogo,
       date: "Sabtu, 30 November 2025",
@@ -150,18 +152,18 @@ const ScheduleSection = () => {
                   </div>
 
                   {/* Match Details */}
-                  <div className="space-y-3 pt-6 border-t border-white/10">
-                    <div className="flex items-center justify-center gap-2 text-white">
-                      <Calendar size={18} className="text-orange" />
-                      <span className="text-sm font-medium">{match.date}</span>
+                  <div className="space-y-4 pt-6 border-t border-white/10">
+                    <div className="flex items-start gap-3 text-white">
+                      <Calendar size={20} className="text-orange flex-shrink-0 mt-0.5" />
+                      <span className="text-base font-medium leading-relaxed">{match.date}</span>
                     </div>
-                    <div className="flex items-center justify-center gap-2 text-white">
-                      <Clock size={18} className="text-orange" />
-                      <span className="text-sm font-medium">{match.time}</span>
+                    <div className="flex items-start gap-3 text-white">
+                      <Clock size={20} className="text-orange flex-shrink-0 mt-0.5" />
+                      <span className="text-base font-medium leading-relaxed">{match.time}</span>
                     </div>
-                    <div className="flex items-center justify-center gap-2 text-white">
-                      <MapPin size={18} className="text-orange" />
-                      <span className="text-sm font-medium">{match.venue}</span>
+                    <div className="flex items-start gap-3 text-white">
+                      <MapPin size={20} className="text-orange flex-shrink-0 mt-0.5" />
+                      <span className="text-base font-medium leading-relaxed">{match.venue}</span>
                     </div>
                   </div>
                 </div>
