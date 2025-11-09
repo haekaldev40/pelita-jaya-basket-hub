@@ -65,12 +65,12 @@ const SponsorshipSection = () => {
             >
               <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-orange/50 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/30 h-full flex flex-col items-center justify-center">
                 {/* Sponsor Logo */}
-                <div className="w-full aspect-square flex items-center justify-center mb-4 relative">
+                <div className="w-full aspect-square flex items-center justify-center relative">
                   {sponsor.logo ? (
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="max-w-full max-h-full object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
+                      className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
                     />
                   ) : (
                     <div className="w-full h-full rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
@@ -79,16 +79,6 @@ const SponsorshipSection = () => {
                       </span>
                     </div>
                   )}
-                </div>
-
-                {/* Sponsor Info */}
-                <div className="text-center">
-                  <h3 className="text-white font-bold text-lg mb-2 group-hover:text-orange transition-colors duration-300">
-                    {sponsor.name}
-                  </h3>
-                  <p className="text-white/60 text-sm font-medium">
-                    {sponsor.tier}
-                  </p>
                 </div>
 
                 {/* Decorative corner */}
