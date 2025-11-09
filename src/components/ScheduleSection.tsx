@@ -81,7 +81,7 @@ const ScheduleSection = () => {
           {matches.map((match, index) => (
             <Card
               key={match.id}
-              className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-orange/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/30 animate-fade-in overflow-hidden"
+              className="group bg-gradient-to-br from-navy/90 to-navy/70 backdrop-blur-xl border border-orange/30 hover:border-orange transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/50 animate-fade-in overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-0">
