@@ -64,7 +64,7 @@ const ScheduleSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-block mb-4 px-4 py-2 bg-orange/20 backdrop-blur-sm rounded-full border border-orange/30">
             <span className="text-orange font-semibold text-sm">📅 Jadwal Pertandingan</span>
           </div>
@@ -81,8 +81,9 @@ const ScheduleSection = () => {
           {matches.map((match, index) => (
             <Card
               key={match.id}
-              className="group bg-gradient-to-br from-navy/90 to-navy/70 backdrop-blur-xl border border-orange/30 hover:border-orange transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/50 animate-fade-in overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group bg-gradient-to-br from-navy/90 to-navy/70 backdrop-blur-xl border border-orange/30 hover:border-orange transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/50 overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
               <CardContent className="p-0">
                 {/* Tournament Badge */}

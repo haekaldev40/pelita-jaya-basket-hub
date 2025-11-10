@@ -43,7 +43,7 @@ const SponsorshipSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-block mb-4 px-4 py-2 bg-orange/20 backdrop-blur-sm rounded-full border border-orange/30">
             <span className="text-orange font-semibold text-sm">🤝 Official Partners</span>
           </div>
@@ -55,42 +55,36 @@ const SponsorshipSection = () => {
           </p>
         </div>
 
-        {/* Sponsors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+        {/* Sponsors Grid - Logo Only */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 max-w-7xl mx-auto items-center justify-items-center">
           {sponsors.map((sponsor, index) => (
             <div
               key={sponsor.id}
-              className="group animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
             >
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-orange/50 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/30 h-full flex flex-col items-center justify-center">
-                {/* Sponsor Logo */}
-                <div className="w-full aspect-square flex items-center justify-center relative">
-                  {sponsor.logo ? (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="w-full h-full rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                      <span className="text-4xl font-black text-white/30 group-hover:text-orange transition-colors duration-300">
-                        {sponsor.name.substring(0, 2).toUpperCase()}
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-orange/0 group-hover:border-orange/50 rounded-tr-2xl transition-all duration-500"></div>
-                <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-orange/0 group-hover:border-orange/50 rounded-bl-2xl transition-all duration-500"></div>
+              <div className="relative w-full h-32 flex items-center justify-center transition-all duration-500 hover:scale-125 hover:rotate-3">
+                {sponsor.logo ? (
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="max-w-full max-h-full object-contain transition-all duration-500 drop-shadow-[0_0_15px_rgba(0,0,0,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(249,115,22,0.6)] group-hover:brightness-110"
+                  />
+                ) : (
+                  <div className="w-full h-full rounded-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 flex items-center justify-center transition-all duration-500 group-hover:border-orange/50 group-hover:shadow-lg group-hover:shadow-orange/30">
+                    <span className="text-5xl font-black text-white/30 group-hover:text-orange transition-colors duration-300">
+                      {sponsor.name.substring(0, 2).toUpperCase()}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
+        <div className="mt-20 text-center">
           <div className="inline-block bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-8 max-w-2xl">
             <h3 className="text-2xl font-bold text-white mb-3">
               Tertarik Menjadi Sponsor?
@@ -98,7 +92,7 @@ const SponsorshipSection = () => {
             <p className="text-white/70 mb-6">
               Bergabunglah dengan keluarga besar Pelita Jaya Basketball Club dan dukung prestasi olahraga Indonesia
             </p>
-            <button className="px-8 py-3 bg-gradient-to-r from-orange to-orange-dark text-white font-bold rounded-xl hover:shadow-lg hover:shadow-orange/50 transition-all duration-300 hover:-translate-y-1">
+            <button className="px-8 py-3 bg-gradient-to-r from-orange to-orange-dark text-white font-bold rounded-xl hover:shadow-lg hover:shadow-orange/50 transition-all duration-300 hover:-translate-y-1 hover:scale-105">
               Hubungi Kami
             </button>
           </div>

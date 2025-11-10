@@ -34,7 +34,7 @@ const NewsSection = () => {
     <section id="news" className="py-24 bg-gradient-to-b from-white to-muted/30">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-block mb-4 px-4 py-2 bg-orange/10 rounded-full">
             <span className="text-orange font-semibold text-sm">📰 Berita Terbaru</span>
           </div>
@@ -51,8 +51,9 @@ const NewsSection = () => {
           {news.map((item, index) => (
             <Card
               key={item.id}
-              className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
               <div className="relative overflow-hidden h-56">
                 <img

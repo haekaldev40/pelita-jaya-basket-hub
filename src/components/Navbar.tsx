@@ -69,7 +69,7 @@ const Navbar = () => {
               className={`transition-all ${
                 isScrolled 
                   ? "border-navy text-navy hover:bg-navy hover:text-white" 
-                  : "border-white text-white hover:bg-white hover:text-navy"
+                  : "border-white text-white bg-white/10 hover:bg-white hover:text-navy"
               }`}
             >
               Gabung Tim

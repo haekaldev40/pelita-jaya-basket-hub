@@ -28,7 +28,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="0">
             <div className="flex items-center gap-3 mb-6">
               <img src={logo} alt="Pelita Jaya" className="h-16 w-16" />
               <div>
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Club Links */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="100">
             <h4 className="text-lg font-bold mb-6">Klub</h4>
             <ul className="space-y-3">
               {footerLinks.club.map((link) => (
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
 
           {/* Fans Links */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="200">
             <h4 className="text-lg font-bold mb-6">Untuk Fans</h4>
             <ul className="space-y-3">
               {footerLinks.fans.map((link) => (
@@ -103,7 +103,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="300">
             <h4 className="text-lg font-bold mb-6">Kontak</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">

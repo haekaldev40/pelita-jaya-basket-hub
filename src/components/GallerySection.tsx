@@ -56,7 +56,7 @@ const GallerySection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-block mb-4 px-4 py-2 bg-orange/20 backdrop-blur-sm rounded-full border border-orange/30">
             <span className="text-orange font-semibold text-sm">📸 Gallery Foto</span>
           </div>
@@ -73,8 +73,9 @@ const GallerySection = () => {
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
               onClick={() => setSelectedImage(image.src)}
             >
               {/* Glassmorphism Overlay */}

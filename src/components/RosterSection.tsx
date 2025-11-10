@@ -66,7 +66,7 @@ const RosterSection = () => {
     <section id="roster" className="py-24 bg-gradient-to-b from-white to-muted/30 overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-block mb-4 px-4 py-2 bg-orange/10 rounded-full">
             <span className="text-orange font-semibold text-sm">🏀 Tim Kami</span>
           </div>

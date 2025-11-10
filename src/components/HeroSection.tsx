@@ -28,11 +28,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-3xl">
-          <div className="inline-block mb-6 px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg animate-fade-in">
+          <div className="inline-block mb-6 px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg" data-aos="fade-down">
             <span className="text-white font-semibold text-sm tracking-wide">🏀 Season 2024/2025</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight animate-slide-up">
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
             BANGKITKAN
             <br />
             <span className="text-gradient bg-gradient-to-r from-orange to-orange-light bg-clip-text text-transparent">
@@ -40,12 +40,12 @@ const HeroSection = () => {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
             Bergabunglah dengan keluarga besar Pelita Jaya Basketball Club. 
             Saksikan pertandingan seru dan dukung tim kesayangan Anda!
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-orange to-orange-light hover:from-orange-dark hover:to-orange text-white text-base px-8 py-6 hover-glow group shadow-xl"
@@ -62,7 +62,7 @@ const HeroSection = () => {
           </div>
 
           {/* Stats with Glassmorphism */}
-          <div className="grid grid-cols-3 gap-6 mt-16 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <div className="grid grid-cols-3 gap-6 mt-16" data-aos="fade-up" data-aos-delay="400">
             <div className="text-center p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
               <div className="text-3xl md:text-4xl font-black text-orange mb-2">15+</div>
               <div className="text-sm text-white/90 font-medium">Tahun Berdiri</div>
