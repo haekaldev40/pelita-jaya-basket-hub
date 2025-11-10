@@ -1,8 +1,11 @@
 import { Calendar, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const NewsSection = () => {
+  const header = useScrollAnimation();
+  
   const news = [
     {
       id: 1,
@@ -34,7 +37,12 @@ const NewsSection = () => {
     <section id="news" className="py-24 bg-gradient-to-b from-white to-muted/30">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div 
+          ref={header.elementRef}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            header.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
           <div className="inline-block mb-4 px-4 py-2 bg-orange/10 rounded-full">
             <span className="text-orange font-semibold text-sm">📰 Berita Terbaru</span>
           </div>
@@ -51,9 +59,8 @@ const NewsSection = () => {
           {news.map((item, index) => (
             <Card
               key={item.id}
-              className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden h-56">
                 <img

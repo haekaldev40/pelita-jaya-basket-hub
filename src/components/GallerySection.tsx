@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroBasketball from "@/assets/hero-basketball.jpg";
 import heroTeam from "@/assets/hero-team.jpeg";
 import pemain1 from "@/assets/pemain-1.webp";
@@ -8,6 +9,7 @@ import pemain3 from "@/assets/pemain-3.jpg";
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const header = useScrollAnimation();
 
   const galleryImages = [
     {
@@ -56,7 +58,12 @@ const GallerySection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div 
+          ref={header.elementRef}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            header.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
           <div className="inline-block mb-4 px-4 py-2 bg-orange/20 backdrop-blur-sm rounded-full border border-orange/30">
             <span className="text-orange font-semibold text-sm">📸 Gallery Foto</span>
           </div>
@@ -73,9 +80,8 @@ const GallerySection = () => {
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
-              data-aos="zoom-in"
-              data-aos-delay={index * 100}
+              className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => setSelectedImage(image.src)}
             >
               {/* Glassmorphism Overlay */}

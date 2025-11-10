@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-team.jpeg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
+  const badge = useScrollAnimation();
+  const title = useScrollAnimation();
+  const description = useScrollAnimation();
+  const buttons = useScrollAnimation();
+  const stats = useScrollAnimation();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background Image with Glassmorphism Overlay */}
@@ -28,11 +35,21 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-3xl">
-          <div className="inline-block mb-6 px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg" data-aos="fade-down">
+          <div 
+            ref={badge.elementRef}
+            className={`inline-block mb-6 px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg transition-all duration-1000 ${
+              badge.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+            }`}
+          >
             <span className="text-white font-semibold text-sm tracking-wide">🏀 Season 2024/2025</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+          <h1 
+            ref={title.elementRef}
+            className={`text-5xl md:text-7xl font-black text-white mb-6 leading-tight transition-all duration-1000 delay-100 ${
+              title.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             BANGKITKAN
             <br />
             <span className="text-gradient bg-gradient-to-r from-orange to-orange-light bg-clip-text text-transparent">
@@ -40,12 +57,22 @@ const HeroSection = () => {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
+          <p 
+            ref={description.elementRef}
+            className={`text-lg md:text-xl text-white/90 mb-8 max-w-2xl transition-all duration-1000 delay-200 ${
+              description.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             Bergabunglah dengan keluarga besar Pelita Jaya Basketball Club. 
             Saksikan pertandingan seru dan dukung tim kesayangan Anda!
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="300">
+          <div 
+            ref={buttons.elementRef}
+            className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-300 ${
+              buttons.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-orange to-orange-light hover:from-orange-dark hover:to-orange text-white text-base px-8 py-6 hover-glow group shadow-xl"
@@ -62,7 +89,12 @@ const HeroSection = () => {
           </div>
 
           {/* Stats with Glassmorphism */}
-          <div className="grid grid-cols-3 gap-6 mt-16" data-aos="fade-up" data-aos-delay="400">
+          <div 
+            ref={stats.elementRef}
+            className={`grid grid-cols-3 gap-6 mt-16 transition-all duration-1000 delay-400 ${
+              stats.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             <div className="text-center p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
               <div className="text-3xl md:text-4xl font-black text-orange mb-2">15+</div>
               <div className="text-sm text-white/90 font-medium">Tahun Berdiri</div>

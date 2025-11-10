@@ -1,7 +1,10 @@
 import pelitaAir from "@/assets/sponsor-pelita-air.png";
 import redBull from "@/assets/sponsor-redbull.png";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const SponsorshipSection = () => {
+  const header = useScrollAnimation();
+  
   const sponsors = [
     {
       id: 1,
@@ -43,7 +46,12 @@ const SponsorshipSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div 
+          ref={header.elementRef}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            header.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
           <div className="inline-block mb-4 px-4 py-2 bg-orange/20 backdrop-blur-sm rounded-full border border-orange/30">
             <span className="text-orange font-semibold text-sm">🤝 Official Partners</span>
           </div>
@@ -60,9 +68,8 @@ const SponsorshipSection = () => {
           {sponsors.map((sponsor, index) => (
             <div
               key={sponsor.id}
-              className="group"
-              data-aos="zoom-in"
-              data-aos-delay={index * 100}
+              className="group animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative w-full h-32 flex items-center justify-center transition-all duration-500 hover:scale-125 hover:rotate-3">
                 {sponsor.logo ? (

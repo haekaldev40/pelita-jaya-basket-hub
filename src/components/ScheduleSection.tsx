@@ -1,10 +1,13 @@
 import { Calendar, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import pelitaLogo from "@/assets/pelita-jaya-logo.png";
 import satriaMudaLogo from "@/assets/satria-muda-logo.jpg";
 import hangTuahLogo from "@/assets/hang-tuah-logo.png";
 
 const ScheduleSection = () => {
+  const header = useScrollAnimation();
+  
   const matches = [
     {
       id: 1,
@@ -64,7 +67,12 @@ const ScheduleSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div 
+          ref={header.elementRef}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            header.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
           <div className="inline-block mb-4 px-4 py-2 bg-orange/20 backdrop-blur-sm rounded-full border border-orange/30">
             <span className="text-orange font-semibold text-sm">📅 Jadwal Pertandingan</span>
           </div>
@@ -81,9 +89,8 @@ const ScheduleSection = () => {
           {matches.map((match, index) => (
             <Card
               key={match.id}
-              className="group bg-gradient-to-br from-navy/90 to-navy/70 backdrop-blur-xl border border-orange/30 hover:border-orange transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/50 overflow-hidden"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              className="group bg-gradient-to-br from-navy/90 to-navy/70 backdrop-blur-xl border border-orange/30 hover:border-orange transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange/50 overflow-hidden animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-0">
                 {/* Tournament Badge */}

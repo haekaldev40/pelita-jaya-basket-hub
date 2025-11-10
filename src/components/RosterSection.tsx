@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import pemain1 from "@/assets/pemain-1.webp";
 import pemain2 from "@/assets/pemain-2.jpeg";
 import pemain3 from "@/assets/pemain-3.jpg";
@@ -9,6 +10,7 @@ import pemain3 from "@/assets/pemain-3.jpg";
 const RosterSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const header = useScrollAnimation();
 
   const players = [
     {
@@ -66,7 +68,12 @@ const RosterSection = () => {
     <section id="roster" className="py-24 bg-gradient-to-b from-white to-muted/30 overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div 
+          ref={header.elementRef}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            header.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
           <div className="inline-block mb-4 px-4 py-2 bg-orange/10 rounded-full">
             <span className="text-orange font-semibold text-sm">🏀 Tim Kami</span>
           </div>

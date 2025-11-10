@@ -1,7 +1,13 @@
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import logo from "@/assets/pelita-jaya-logo.png";
 
 const Footer = () => {
+  const brand = useScrollAnimation();
+  const club = useScrollAnimation();
+  const fans = useScrollAnimation();
+  const contact = useScrollAnimation();
+  
   const footerLinks = {
     club: [
       { name: "Tentang Kami", href: "#about" },
@@ -28,7 +34,12 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div data-aos="fade-up" data-aos-delay="0">
+          <div 
+            ref={brand.elementRef}
+            className={`transition-all duration-1000 ${
+              brand.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             <div className="flex items-center gap-3 mb-6">
               <img src={logo} alt="Pelita Jaya" className="h-16 w-16" />
               <div>
@@ -69,7 +80,12 @@ const Footer = () => {
           </div>
 
           {/* Club Links */}
-          <div data-aos="fade-up" data-aos-delay="100">
+          <div 
+            ref={club.elementRef}
+            className={`transition-all duration-1000 delay-100 ${
+              club.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             <h4 className="text-lg font-bold mb-6">Klub</h4>
             <ul className="space-y-3">
               {footerLinks.club.map((link) => (
@@ -86,7 +102,12 @@ const Footer = () => {
           </div>
 
           {/* Fans Links */}
-          <div data-aos="fade-up" data-aos-delay="200">
+          <div 
+            ref={fans.elementRef}
+            className={`transition-all duration-1000 delay-200 ${
+              fans.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             <h4 className="text-lg font-bold mb-6">Untuk Fans</h4>
             <ul className="space-y-3">
               {footerLinks.fans.map((link) => (
@@ -103,7 +124,12 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div data-aos="fade-up" data-aos-delay="300">
+          <div 
+            ref={contact.elementRef}
+            className={`transition-all duration-1000 delay-300 ${
+              contact.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             <h4 className="text-lg font-bold mb-6">Kontak</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
