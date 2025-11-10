@@ -56,7 +56,7 @@ const AchievementsSection = () => {
                 
                 <div className="relative z-10">
                   {/* Trophy Image for 1st Place */}
-                  {achievement.showTrophy && (
+                  {achievement.showTrophy ? (
                     <div className="mb-6 flex justify-center">
                       <img
                         src={trophyGold}
@@ -64,6 +64,8 @@ const AchievementsSection = () => {
                         className="w-32 h-32 object-contain drop-shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
                       />
                     </div>
+                  ) : (
+                    <div className="mb-6 h-32"></div>
                   )}
 
                   {/* Year Badge */}

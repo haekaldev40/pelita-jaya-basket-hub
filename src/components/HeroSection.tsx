@@ -18,7 +18,7 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Pelita Jaya Basketball Team"
-          className="w-full h-full object-cover object-center scale-105"
+          className="w-full h-full object-cover object-[center_30%] scale-105"
           style={{ imageRendering: '-webkit-optimize-contrast' }}
         />
       </div>
