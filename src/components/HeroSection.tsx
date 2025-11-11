@@ -37,7 +37,7 @@ const HeroSection = () => {
         <div className="max-w-3xl">
           <div 
             ref={badge.elementRef}
-            className={`inline-block mb-6 px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg transition-all duration-1000 ${
+            className={`mt-10 inline-block mb-6 px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg transition-all duration-1000 ${
               badge.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
             }`}
           >
@@ -91,7 +91,7 @@ const HeroSection = () => {
           {/* Stats with Glassmorphism */}
           <div 
             ref={stats.elementRef}
-            className={`grid grid-cols-3 gap-6 mt-16 transition-all duration-1000 delay-400 ${
+            className={`grid grid-cols-3 gap-6 mt-10 transition-all duration-1000 delay-400 ${
               stats.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
