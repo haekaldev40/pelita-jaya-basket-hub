@@ -103,10 +103,10 @@ const ScheduleSection = () => {
                 {/* Main Match Display */}
                 <div className="p-8">
                   {/* Teams with Logos */}
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-8 gap-2">
                     {/* Home Team */}
-                    <div className="flex flex-col items-center flex-1 space-y-3">
-                      <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 flex items-center justify-center p-4 group-hover:border-orange/50 transition-all duration-300">
+                    <div className="flex flex-col items-center flex-1 space-y-2 md:space-y-3 min-w-0">
+                      <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 flex items-center justify-center p-3 md:p-4 group-hover:border-orange/50 transition-all duration-300 flex-shrink-0">
                         {match.homeTeamLogo ? (
                           <img 
                             src={match.homeTeamLogo} 
@@ -114,12 +114,12 @@ const ScheduleSection = () => {
                             className="w-full h-full object-contain"
                           />
                         ) : (
-                          <div className="text-3xl font-black text-white/50">
+                          <div className="text-xl md:text-3xl font-black text-white/50">
                             {match.homeTeam.substring(0, 2).toUpperCase()}
                           </div>
                         )}
                       </div>
-                      <h3 className={`text-center font-bold text-lg leading-tight max-w-[140px] ${
+                      <h3 className={`text-center font-bold text-sm md:text-lg leading-tight ${
                         match.homeTeam === "Pelita Jaya" ? "text-orange" : "text-white"
                       }`}>
                         {match.homeTeam}
@@ -127,18 +127,18 @@ const ScheduleSection = () => {
                     </div>
 
                     {/* VS & Score */}
-                    <div className="flex flex-col items-center px-6 space-y-3">
-                      <div className="text-5xl font-black text-white/30">VS</div>
-                      <div className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                        <span className="text-white/50 font-bold text-sm">
+                    <div className="flex flex-col items-center px-2 md:px-6 space-y-2 md:space-y-3 flex-shrink-0">
+                      <div className="text-3xl md:text-5xl font-black text-white/30">VS</div>
+                      <div className="px-2 md:px-4 py-1 md:py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
+                        <span className="text-white/50 font-bold text-xs md:text-sm">
                           {match.gameNumber}
                         </span>
                       </div>
                     </div>
 
                     {/* Away Team */}
-                    <div className="flex flex-col items-center flex-1 space-y-3">
-                      <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 flex items-center justify-center p-4 group-hover:border-orange/50 transition-all duration-300">
+                    <div className="flex flex-col items-center flex-1 space-y-2 md:space-y-3 min-w-0">
+                      <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 flex items-center justify-center p-3 md:p-4 group-hover:border-orange/50 transition-all duration-300 flex-shrink-0">
                         {match.awayTeamLogo ? (
                           <img 
                             src={match.awayTeamLogo} 
@@ -146,12 +146,12 @@ const ScheduleSection = () => {
                             className="w-full h-full object-contain"
                           />
                         ) : (
-                          <div className="text-3xl font-black text-white/50">
+                          <div className="text-xl md:text-3xl font-black text-white/50">
                             {match.awayTeam.substring(0, 2).toUpperCase()}
                           </div>
                         )}
                       </div>
-                      <h3 className={`text-center font-bold text-lg leading-tight max-w-[140px] ${
+                      <h3 className={`text-center font-bold text-sm md:text-lg leading-tight ${
                         match.awayTeam === "Pelita Jaya" ? "text-orange" : "text-white"
                       }`}>
                         {match.awayTeam}
